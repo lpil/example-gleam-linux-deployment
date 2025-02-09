@@ -26,6 +26,6 @@ pub fn main() {
 }
 
 fn handle_request(_request: wisp.Request) -> wisp.Response {
-  let html = "<h1>Hello Stream!</h1>"
+  let html = "<body style='background-colour: lightblue'><h1>BLUE</h1></body>"
   wisp.html_response(string_tree.from_string(html), 200)
 }
