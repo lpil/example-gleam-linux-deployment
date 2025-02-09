@@ -17,6 +17,7 @@ pub fn main() {
   let assert Ok(_) =
     wisp_mist.handler(handle_request, secret_key_base)
     |> mist.new
+    |> mist.bind("0.0.0.0")
     |> mist.port(8000)
     |> mist.start_http
 
@@ -26,6 +27,6 @@ pub fn main() {
 }
 
 fn handle_request(_request: wisp.Request) -> wisp.Response {
-  let html = "<body style='background-colour: #90EE90'><h1>GREEN</h1></body>"
+  let html = "<body style='background-colour: lime'><h1>GREEN</h1></body>"
   wisp.html_response(string_tree.from_string(html), 200)
 }
